@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": "example-mean",
+    "operation": "mean",
+    "target_column": "amount",
+    "missing_policy": "exclude"
+  },
+  {
+    "task_id": "example-groupby",
+    "operation": "groupby_agg",
+    "target_column": "amount",
+    "group_by": "region",
+    "aggregation": "mean",
+    "missing_policy": "exclude"
+  }
+]

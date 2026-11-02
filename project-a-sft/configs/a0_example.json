@@ -1,0 +1,26 @@
+{
+  "seed": 17,
+  "corruptions": [
+    {
+      "corruption_type": "missing",
+      "severity": 0.1,
+      "column": "sales"
+    },
+    {
+      "corruption_type": "category_inconsistency",
+      "severity": 0.1,
+      "column": "region",
+      "value": "EAST"
+    }
+  ],
+  "task": {
+    "task_id": "sales-total",
+    "operation": "sum",
+    "target_column": "sales",
+    "group_by": [],
+    "missing_policy": "skip",
+    "deduplicate": false,
+    "sentinel_policy": "include",
+    "sentinel_values": {}
+  }
+}

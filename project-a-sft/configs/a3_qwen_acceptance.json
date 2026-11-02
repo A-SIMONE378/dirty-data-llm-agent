@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-8B",
+  "prompt_version": "a3-qwen-tools-v1",
+  "selection_seed": "project-a-a3-qwen3-8b-eval-v1",
+  "tasks_per_split": {
+    "test": 40,
+    "domain_generalization": 10
+  },
+  "tasks_per_table": {
+    "test": 5,
+    "domain_generalization": 2
+  },
+  "max_new_tokens": 768,
+  "max_context_tokens": 28672,
+  "do_sample": false,
+  "trust_remote_code": false
+}

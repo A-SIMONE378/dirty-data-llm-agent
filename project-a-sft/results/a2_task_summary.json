@@ -1,0 +1,60 @@
+{
+  "a2_complete": true,
+  "answer_critical_needs_counts": {
+    "category_inconsistency": 106,
+    "duplicate_rows": 548,
+    "format_inconsistency": 98,
+    "type_corruption": 125
+  },
+  "applied_corruption_counts": {
+    "category_inconsistency": 564,
+    "duplicate_rows": 1489,
+    "format_inconsistency": 581,
+    "missing_values": 4360,
+    "sentinel_values": 1489,
+    "type_corruption": 793
+  },
+  "blocking_gate": null,
+  "difficulty_counts": {
+    "cleaning_required": 652,
+    "grouped": 1235,
+    "judgment": 1214,
+    "single_step": 1259
+  },
+  "dirty_replay_checks_passed": 4360,
+  "expected_split_counts": {
+    "dev": 320,
+    "domain_generalization": 400,
+    "test": 640,
+    "train": 3000
+  },
+  "judgment_answer_counts": {
+    "false": 607,
+    "true": 607
+  },
+  "manual_review_sample_size": 100,
+  "manual_review_status": "PASS",
+  "mechanical_gate_pass": true,
+  "profile_counts": {
+    "high": 793,
+    "low": 2871,
+    "medium": 696
+  },
+  "programmatic_answer_checks_passed": 4360,
+  "question_spec_exact_render_checks_passed": 4360,
+  "render_style_counts": {
+    "concise": 1648,
+    "heldout": 1040,
+    "standard": 1672
+  },
+  "schema_version": 1,
+  "split_counts": {
+    "dev": 320,
+    "domain_generalization": 400,
+    "test": 640,
+    "train": 3000
+  },
+  "table_split_leakage_detected": false,
+  "tables_checked": 45,
+  "tasks_checked": 4360
+}

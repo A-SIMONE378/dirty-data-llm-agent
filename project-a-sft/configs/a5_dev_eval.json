@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-1.7B",
+  "prompt_version": "a5-qwen-tools-dev-v1",
+  "selection_seed": "project-a-a5-qwen3-1.7b-dev-v1",
+  "tasks_per_split": {
+    "dev": 40
+  },
+  "tasks_per_table": {
+    "dev": 10
+  },
+  "minimum_net_accepted_gain": 4,
+  "max_new_tokens": 768,
+  "max_context_tokens": 28672,
+  "do_sample": false,
+  "trust_remote_code": false
+}

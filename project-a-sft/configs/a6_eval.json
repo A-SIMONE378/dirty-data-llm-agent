@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-1.7B",
+  "prompt_version": "a6-qwen-tools-test-domain-v1",
+  "selection_seed": "project-a-a6-test-domain-v1",
+  "tasks_per_split": {
+    "test": 80,
+    "domain_generalization": 40
+  },
+  "tasks_per_table": {
+    "test": 10,
+    "domain_generalization": 8
+  },
+  "max_new_tokens": 768,
+  "max_context_tokens": 28672,
+  "do_sample": false,
+  "trust_remote_code": false
+}

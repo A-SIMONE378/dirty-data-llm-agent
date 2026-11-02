@@ -1,0 +1,113 @@
+{
+  "a6_integrity_pass": true,
+  "accuracy_difference_bootstrap_95": [
+    0.23333333333333328,
+    0.4
+  ],
+  "base_accepted": 64,
+  "base_accuracy": 0.5333333333333333,
+  "base_accuracy_bootstrap_95": [
+    0.45,
+    0.6166666666666667
+  ],
+  "bootstrap_iterations": 2000,
+  "bootstrap_seed": 20261026,
+  "by_split": {
+    "domain_generalization": {
+      "base_accepted": 24,
+      "base_accuracy": 0.6,
+      "base_status_counts": {
+        "accepted": 24,
+        "invalid_action": 3,
+        "max_steps": 7,
+        "rejected": 6
+      },
+      "net_accepted_gain": 13,
+      "sft_accepted": 37,
+      "sft_accuracy": 0.925,
+      "sft_status_counts": {
+        "accepted": 37,
+        "rejected": 3
+      },
+      "task_count": 40
+    },
+    "test": {
+      "base_accepted": 40,
+      "base_accuracy": 0.5,
+      "base_status_counts": {
+        "accepted": 40,
+        "invalid_action": 7,
+        "max_steps": 18,
+        "rejected": 15
+      },
+      "net_accepted_gain": 25,
+      "sft_accepted": 65,
+      "sft_accuracy": 0.8125,
+      "sft_status_counts": {
+        "accepted": 65,
+        "rejected": 15
+      },
+      "task_count": 80
+    }
+  },
+  "net_accepted_gain": 38,
+  "recovered_task_ids": [
+    "a2-domain_generalization-uci_023_chess_krk-0059",
+    "a2-domain_generalization-uci_042_glass_identification-0032",
+    "a2-domain_generalization-uci_042_glass_identification-0046",
+    "a2-domain_generalization-uci_042_glass_identification-0054",
+    "a2-domain_generalization-uci_042_glass_identification-0068",
+    "a2-domain_generalization-uci_601_predictive_maintenance-0003",
+    "a2-domain_generalization-uci_601_predictive_maintenance-0058",
+    "a2-domain_generalization-uci_601_predictive_maintenance-0073",
+    "a2-domain_generalization-uci_851_steel_energy-0003",
+    "a2-domain_generalization-uci_851_steel_energy-0053",
+    "a2-domain_generalization-uci_851_steel_energy-0075",
+    "a2-domain_generalization-uci_913_soybean_cultivars-0037",
+    "a2-domain_generalization-uci_913_soybean_cultivars-0057",
+    "a2-domain_generalization-uci_913_soybean_cultivars-0072",
+    "a2-test-uci_277_thoracic_surgery-0014",
+    "a2-test-uci_277_thoracic_surgery-0045",
+    "a2-test-uci_277_thoracic_surgery-0049",
+    "a2-test-uci_461_drug_reviews-0047",
+    "a2-test-uci_519_heart_failure-0032",
+    "a2-test-uci_519_heart_failure-0046",
+    "a2-test-uci_544_obesity-0022",
+    "a2-test-uci_544_obesity-0028",
+    "a2-test-uci_544_obesity-0056",
+    "a2-test-uci_544_obesity-0066",
+    "a2-test-uci_544_obesity-0071",
+    "a2-test-uci_571_hcv-0033",
+    "a2-test-uci_571_hcv-0053",
+    "a2-test-uci_571_hcv-0068",
+    "a2-test-uci_863_maternal_health-0033",
+    "a2-test-uci_863_maternal_health-0048",
+    "a2-test-uci_863_maternal_health-0050",
+    "a2-test-uci_863_maternal_health-0067",
+    "a2-test-uci_878_cirrhosis-0054",
+    "a2-test-uci_878_cirrhosis-0057",
+    "a2-test-uci_878_cirrhosis-0060",
+    "a2-test-uci_878_cirrhosis-0064",
+    "a2-test-uci_bike_sharing-0036",
+    "a2-test-uci_bike_sharing-0042",
+    "a2-test-uci_bike_sharing-0045",
+    "a2-test-uci_bike_sharing-0058"
+  ],
+  "regressed_task_ids": [
+    "a2-domain_generalization-uci_851_steel_energy-0024",
+    "a2-test-uci_277_thoracic_surgery-0018"
+  ],
+  "runtime_integrity_errors": [],
+  "schema_version": 1,
+  "sft_accepted": 102,
+  "sft_accuracy": 0.85,
+  "sft_accuracy_bootstrap_95": [
+    0.7833333333333333,
+    0.9083333333333333
+  ],
+  "splits": [
+    "domain_generalization",
+    "test"
+  ],
+  "task_count": 120
+}

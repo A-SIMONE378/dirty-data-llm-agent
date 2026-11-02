@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "selection_seed": "project-a-b3-train-v1",
+  "split": "train",
+  "task_count": 800,
+  "samples_per_task": 8,
+  "pass_rate_min": 0.01,
+  "pass_rate_max": 0.99,
+  "curriculum": [
+    "single_step",
+    "grouped",
+    "cleaning_required",
+    "judgment"
+  ]
+}

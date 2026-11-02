@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "base_seed": 20261022,
+  "train_task_total": 3000,
+  "tasks_per_non_train_table": 80,
+  "manual_review_sample_size": 100,
+  "cleaning_difficulty_fraction": 0.15,
+  "difficulty_order": [
+    "single_step",
+    "grouped",
+    "cleaning_required",
+    "judgment"
+  ],
+  "render_styles": {
+    "train": ["standard", "concise"],
+    "dev": ["standard", "concise"],
+    "test": ["heldout"],
+    "domain_generalization": ["heldout"]
+  },
+  "profile_cycles": {
+    "single_step": ["low"],
+    "grouped": ["low"],
+    "cleaning_required": ["medium", "high"],
+    "judgment": ["low", "medium", "high"]
+  }
+}

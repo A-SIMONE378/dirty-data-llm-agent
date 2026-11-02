@@ -1,0 +1,62 @@
+{
+  "a2_source_tasks": 4360,
+  "a3_complete": true,
+  "blocking_gate": null,
+  "checks": {
+    "agent_loop_completes": true,
+    "exact_three_tools": true,
+    "file_escape_blocked": true,
+    "imports_blocked": true,
+    "inspect_has_no_oracle_fields": true,
+    "model_context_has_no_private_oracle": true,
+    "platform_resource_limits_reported": true,
+    "python_state_persists": true,
+    "real_a2_dirty_replay_loads": true,
+    "strict_correct_answer_accepted": true,
+    "strict_type_mismatch_rejected": true,
+    "tool_output_truncated": true,
+    "trajectory_has_no_oracle_fields": true,
+    "trajectory_schema_valid": true
+  },
+  "checks_passed": 14,
+  "checks_total": 14,
+  "environment_engineering_pass": true,
+  "gpu_acceptance": {
+    "accepted_accuracy": 0.48,
+    "checks": {
+      "accuracy_is_recomputed": true,
+      "all_trajectories_validate": true,
+      "frozen_manifest_is_50_unique_tasks": true,
+      "latest_results_cover_manifest": true,
+      "manifest_hash_matches_summary": true,
+      "no_runtime_model_errors": true,
+      "posix_limits_active_in_gpu_run": true,
+      "private_fields_absent": true,
+      "run_is_complete": true,
+      "summary_counts_match_latest_results": true,
+      "summary_declares_pass": true,
+      "trajectory_files_cover_manifest": true
+    },
+    "model_id": "Qwen/Qwen3-8B",
+    "passed": true,
+    "runtime": {
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "model_path": "/hy-tmp/Qwen3-8B",
+      "python": "3.11.11",
+      "torch": "2.5.1+cu124",
+      "transformers": "4.57.6"
+    },
+    "status": "PASS",
+    "terminal_status_counts": {
+      "accepted": 24,
+      "invalid_action": 2,
+      "max_steps": 18,
+      "rejected": 6
+    }
+  },
+  "platform": "posix",
+  "posix_resource_limits_active": true,
+  "qwen3_8b_50_task_acceptance": "PASS",
+  "schema_version": 1
+}

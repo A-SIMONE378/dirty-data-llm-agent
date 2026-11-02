@@ -1,0 +1,34 @@
+{
+  "tables_cataloged": 54,
+  "tables_selected": 45,
+  "tables_quarantined": 9,
+  "core_tables": 40,
+  "domain_generalization_tables": 5,
+  "target_total_range": [
+    45,
+    68
+  ],
+  "tables_structurally_eligible": 52,
+  "tables_research_approved": 45,
+  "tables_admitted": 45,
+  "domains": 36,
+  "split_counts": {
+    "dev": 4,
+    "domain_generalization": 5,
+    "test": 8,
+    "train": 28
+  },
+  "expected_core_split_counts": {
+    "train": 28,
+    "dev": 4,
+    "test": 8
+  },
+  "a1_complete": true,
+  "blocking_reasons": [],
+  "corruption_profiles": 3,
+  "dirty_variants_checked": 162,
+  "dirty_variants_reproducible": 162,
+  "canonical_invariants_passed": 162,
+  "engineering_gate_pass": true,
+  "status": "complete"
+}

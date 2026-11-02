@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "base_seed": 20261021,
+  "profiles": {
+    "low": {
+      "corruption_types": ["missing_values"],
+      "allow_inapplicable": []
+    },
+    "medium": {
+      "corruption_types": ["missing_values", "sentinel_values", "duplicate_rows"],
+      "allow_inapplicable": []
+    },
+    "high": {
+      "corruption_types": [
+        "missing_values",
+        "sentinel_values",
+        "duplicate_rows",
+        "type_corruption",
+        "format_inconsistency",
+        "category_inconsistency"
+      ],
+      "allow_inapplicable": ["format_inconsistency", "category_inconsistency"]
+    }
+  }
+}

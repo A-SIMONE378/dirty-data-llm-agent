@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-14B",
+  "prompt_version": "a4-qwen-teacher-v3-14b",
+  "selection_seed": "project-a-a4-train-v1",
+  "split": "train",
+  "selected_task_count": 800,
+  "samples_per_task": 8,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "max_new_tokens": 256,
+  "max_context_tokens": 28672,
+  "max_steps": 10,
+  "run_timeout_seconds": 15.0,
+  "max_memory_mb": 8192,
+  "max_cpu_seconds": 120,
+  "invalid_action_retries": 1,
+  "trust_remote_code": false,
+  "minimum_retained_trajectories": 3000,
+  "maximum_retained_trajectories": 8000,
+  "human_review_sample_size": 50
+}

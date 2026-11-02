@@ -1,0 +1,1273 @@
+{
+  "schema_version": 1,
+  "selection_criteria": {
+    "min_tables": 40,
+    "max_tables": 60,
+    "min_rows": 200,
+    "max_rows": 5000,
+    "min_columns": 5,
+    "max_columns": 20,
+    "require_numeric_measure": true,
+    "require_category": true,
+    "prefer_date": true,
+    "require_unique_rows": true
+  },
+  "split_policy": {
+    "unit": "table",
+    "train_ratio": 0.7,
+    "dev_ratio": 0.1,
+    "test_ratio": 0.2,
+    "domain_generalization_min": 5,
+    "domain_generalization_max": 8,
+    "note": "Current assignments are a non-final 11-table pilot and must not be reported as the completed A1 split."
+  },
+  "tables": {
+    "china_city_statistics.csv": {
+      "domain": "regional economics",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied China city database extract",
+        "source_url": null,
+        "transformations": [
+          "Standardized CSV supplied in the project data pack; upstream extraction procedure is undocumented."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Do not release or train on this table until upstream source and reuse terms are recorded."
+      ]
+    },
+    "customer_master.csv": {
+      "domain": "retail customers",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied project data pack",
+        "source_url": null,
+        "transformations": [
+          "Upstream source or synthetic-data generator is not documented."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Customer identifiers are synthetic-looking but this is not treated as proof of synthetic origin."
+      ]
+    },
+    "sales_transactions.csv": {
+      "domain": "retail sales",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied project data pack",
+        "source_url": null,
+        "transformations": [
+          "Upstream source or synthetic-data generator is not documented."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Source-level derived-value discrepancies remain documented in A0_CORRECTNESS_AUDIT.md."
+      ]
+    },
+    "student_grade_ses.csv": {
+      "domain": "education",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied project data pack",
+        "source_url": null,
+        "transformations": [
+          "Upstream source or synthetic-data generator is not documented."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": []
+    },
+    "student_sleep_screen_time.csv": {
+      "domain": "education and health",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied project data pack",
+        "source_url": null,
+        "transformations": [
+          "Upstream source or synthetic-data generator is not documented."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": []
+    },
+    "tianchi_baby_trade_history.csv": {
+      "domain": "e-commerce",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "partial",
+        "source_name": "Tianchi baby trade history sample",
+        "source_url": null,
+        "transformations": [
+          "Standardized 5000-row CSV supplied in the project data pack; exact competition page and sampling procedure are unverified."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Platform availability does not establish redistribution or training rights."
+      ]
+    },
+    "uci_adult.csv": {
+      "domain": "demographics and income",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "partial",
+        "source_name": "UCI Adult",
+        "source_url": "https://archive.ics.uci.edu/dataset/2/adult",
+        "transformations": [
+          "Column names were standardized and the supplied file is limited to 5000 rows; the exact row-selection procedure is unavailable."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5XW20."
+      ]
+    },
+    "uci_bike_sharing.csv": {
+      "domain": "transportation",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "partial",
+        "source_name": "UCI Bike Sharing",
+        "source_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+        "transformations": [
+          "Column names were standardized and the supplied file is limited to 5000 rows; the exact row-selection procedure is unavailable."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5W894."
+      ]
+    },
+    "uci_seoul_bike.csv": {
+      "domain": "transportation",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "partial",
+        "source_name": "UCI Seoul Bike Sharing Demand",
+        "source_url": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+        "transformations": [
+          "Column names were standardized and the supplied file is limited to 5000 rows; the exact row-selection procedure is unavailable."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5F62R."
+      ]
+    },
+    "uci_wine_quality.csv": {
+      "domain": "food chemistry",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "partial",
+        "source_name": "UCI Wine Quality",
+        "source_url": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+        "transformations": [
+          "Red and white variants were standardized into one supplied CSV; exact concatenation and row-selection procedure is unavailable."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C56S3T."
+      ]
+    },
+    "zomato_restaurants.csv": {
+      "domain": "restaurants and hospitality",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "unknown",
+        "source_name": "User-supplied Zomato restaurant extract",
+        "source_url": null,
+        "transformations": [
+          "Standardized 5000-row CSV supplied in the project data pack; exact upstream dataset and sampling procedure are unverified."
+        ]
+      },
+      "license": {
+        "status": "unknown",
+        "name": "UNKNOWN",
+        "url": null
+      },
+      "approved_for_research": false,
+      "notes": [
+        "The file contains 145 unrecoverable Unicode replacement characters."
+      ]
+    },
+    "uci_001_abalone.csv": {
+      "domain": "marine biology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Abalone",
+        "source_url": "https://archive.ics.uci.edu/dataset/1/abalone",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C55C7W."
+      ]
+    },
+    "uci_039_ecoli.csv": {
+      "domain": "molecular biology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Ecoli",
+        "source_url": "https://archive.ics.uci.edu/dataset/39/ecoli",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5388M."
+      ]
+    },
+    "uci_110_yeast.csv": {
+      "domain": "molecular biology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Yeast",
+        "source_url": "https://archive.ics.uci.edu/dataset/110/yeast",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5KG68."
+      ]
+    },
+    "uci_545_rice.csv": {
+      "domain": "crop morphology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Rice (Cammeo and Osmancik)",
+        "source_url": "https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5MW4Z."
+      ]
+    },
+    "uci_850_raisin.csv": {
+      "domain": "food morphology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Raisin",
+        "source_url": "https://archive.ics.uci.edu/dataset/850/raisin",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5660T."
+      ]
+    },
+    "uci_027_credit_approval.csv": {
+      "domain": "credit risk",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Credit Approval",
+        "source_url": "https://archive.ics.uci.edu/dataset/27/credit+approval",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5FS30."
+      ]
+    },
+    "uci_143_australian_credit.csv": {
+      "domain": "credit risk",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Statlog (Australian Credit Approval)",
+        "source_url": "https://archive.ics.uci.edu/dataset/143/statlog+australian+credit+approval",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C59012."
+      ]
+    },
+    "uci_247_istanbul_stock_exchange.csv": {
+      "domain": "financial markets",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI ISTANBUL STOCK EXCHANGE",
+        "source_url": "https://archive.ics.uci.edu/dataset/247/istanbul+stock+exchange",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C54P4J.",
+        "Quarantined after the A2 semantic audit: the table has continuous returns and a date, but no true categorical field; SP is a continuous S&P return."
+      ]
+    },
+    "uci_292_wholesale_customers.csv": {
+      "domain": "wholesale retail",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Wholesale customers",
+        "source_url": "https://archive.ics.uci.edu/dataset/292/wholesale+customers",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5030X."
+      ]
+    },
+    "uci_312_dow_jones_index.csv": {
+      "domain": "financial markets",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Dow Jones Index",
+        "source_url": "https://archive.ics.uci.edu/dataset/312/dow+jones+index",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5788V."
+      ]
+    },
+    "uci_368_facebook_metrics.csv": {
+      "domain": "social media marketing",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Facebook Metrics",
+        "source_url": "https://archive.ics.uci.edu/dataset/368/facebook+metrics",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5QK55."
+      ]
+    },
+    "uci_390_stock_portfolio.csv": {
+      "domain": "portfolio performance",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Stock Portfolio Performance",
+        "source_url": "https://archive.ics.uci.edu/dataset/390/stock+portfolio+performance",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5SC7G."
+      ]
+    },
+    "uci_563_iranian_churn.csv": {
+      "domain": "telecommunications",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Iranian Churn",
+        "source_url": "https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5JW3Z."
+      ]
+    },
+    "uci_597_garment_productivity.csv": {
+      "domain": "manufacturing productivity",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Productivity Prediction of Garment Employees",
+        "source_url": "https://archive.ics.uci.edu/dataset/597/productivity+prediction+of+garment+employees",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C51S6D."
+      ]
+    },
+    "uci_162_forest_fires.csv": {
+      "domain": "wildfire environment",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Forest Fires",
+        "source_url": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5D88D."
+      ]
+    },
+    "uci_029_computer_hardware.csv": {
+      "domain": "computer hardware",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Computer Hardware",
+        "source_url": "https://archive.ics.uci.edu/dataset/29/computer+hardware",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5830D."
+      ]
+    },
+    "uci_257_user_knowledge.csv": {
+      "domain": "education",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI User Knowledge Modeling",
+        "source_url": "https://archive.ics.uci.edu/dataset/257/user+knowledge+modeling",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5231X."
+      ]
+    },
+    "uci_529_early_diabetes.csv": {
+      "domain": "diabetes screening",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Early Stage Diabetes Risk Prediction",
+        "source_url": "https://archive.ics.uci.edu/dataset/529/early+stage+diabetes+risk+prediction+dataset",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5VG8H."
+      ]
+    },
+    "uci_536_pedestrians_traffic.csv": {
+      "domain": "pedestrian traffic",
+      "selection_status": "quarantine",
+      "split": null,
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Pedestrians in Traffic",
+        "source_url": "https://archive.ics.uci.edu/dataset/536/pedestrian+in+traffic+dataset",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": false,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5189C.",
+        "Quarantined after the A2 semantic audit: the table has numeric trajectories, angles, and list-valued other-object fields, but no scalar categorical field."
+      ]
+    },
+    "uci_713_auction_verification.csv": {
+      "domain": "auction systems",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Auction Verification",
+        "source_url": "https://archive.ics.uci.edu/dataset/713/auction+verification",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C52K6N."
+      ]
+    },
+    "uci_014_breast_cancer.csv": {
+      "domain": "oncology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Breast Cancer",
+        "source_url": "https://archive.ics.uci.edu/dataset/14/breast+cancer",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C51P4M."
+      ]
+    },
+    "uci_015_breast_cancer_wisconsin.csv": {
+      "domain": "oncology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Breast Cancer Wisconsin (Original)",
+        "source_url": "https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5HP4Z."
+      ]
+    },
+    "uci_030_contraceptive_method.csv": {
+      "domain": "reproductive health",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Contraceptive Method Choice",
+        "source_url": "https://archive.ics.uci.edu/dataset/30/contraceptive+method+choice",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C59W2D."
+      ]
+    },
+    "uci_045_heart_disease.csv": {
+      "domain": "cardiology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Heart Disease",
+        "source_url": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C52P4X."
+      ]
+    },
+    "uci_060_liver_disorders.csv": {
+      "domain": "hepatology",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Liver Disorders",
+        "source_url": "https://archive.ics.uci.edu/dataset/60/liver+disorders",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C54G67."
+      ]
+    },
+    "uci_145_statlog_heart.csv": {
+      "domain": "cardiology",
+      "selection_status": "selected",
+      "split": "dev",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Statlog (Heart)",
+        "source_url": "https://archive.ics.uci.edu/dataset/145/statlog+heart",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C57303."
+      ]
+    },
+    "uci_161_mammographic_mass.csv": {
+      "domain": "diagnostic imaging",
+      "selection_status": "selected",
+      "split": "dev",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Mammographic Mass",
+        "source_url": "https://archive.ics.uci.edu/dataset/161/mammographic+mass",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C53K6Z."
+      ]
+    },
+    "uci_212_vertebral_column.csv": {
+      "domain": "orthopedics",
+      "selection_status": "selected",
+      "split": "dev",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Vertebral Column",
+        "source_url": "https://archive.ics.uci.edu/dataset/212/vertebral+column",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5K89B."
+      ]
+    },
+    "uci_225_indian_liver_patient.csv": {
+      "domain": "hepatology",
+      "selection_status": "selected",
+      "split": "dev",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI ILPD (Indian Liver Patient Dataset)",
+        "source_url": "https://archive.ics.uci.edu/dataset/225/ilpd+indian+liver+patient+dataset",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5D02C."
+      ]
+    },
+    "uci_277_thoracic_surgery.csv": {
+      "domain": "thoracic surgery",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Thoracic Surgery Data",
+        "source_url": "https://archive.ics.uci.edu/dataset/277/thoracic+surgery+data",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5Z60N."
+      ]
+    },
+    "uci_461_drug_reviews.csv": {
+      "domain": "patient drug reviews",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Drug Reviews (Druglib.com)",
+        "source_url": "https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C55G6J."
+      ]
+    },
+    "uci_519_heart_failure.csv": {
+      "domain": "cardiology",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Heart Failure Clinical Records",
+        "source_url": "https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5Z89R."
+      ]
+    },
+    "uci_544_obesity.csv": {
+      "domain": "nutrition and obesity",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Estimation of Obesity Levels Based On Eating Habits and Physical Condition ",
+        "source_url": "https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5H31Z."
+      ]
+    },
+    "uci_571_hcv.csv": {
+      "domain": "hepatology",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI HCV data",
+        "source_url": "https://archive.ics.uci.edu/dataset/571/hcv+data",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5D612."
+      ]
+    },
+    "uci_863_maternal_health.csv": {
+      "domain": "maternal health",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Maternal Health Risk",
+        "source_url": "https://archive.ics.uci.edu/dataset/863/maternal+health+risk",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5DP5D."
+      ]
+    },
+    "uci_878_cirrhosis.csv": {
+      "domain": "hepatology",
+      "selection_status": "selected",
+      "split": "test",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Cirrhosis Patient Survival Prediction",
+        "source_url": "https://archive.ics.uci.edu/dataset/878/cirrhosis+patient+survival+prediction+dataset-1",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5R02G."
+      ]
+    },
+    "uci_023_chess_krk.csv": {
+      "domain": "game strategy",
+      "selection_status": "selected",
+      "split": "domain_generalization",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Chess (King-Rook vs. King)",
+        "source_url": "https://archive.ics.uci.edu/dataset/23/chess+king+rook+vs+king",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Selected the 5000 source row positions with the smallest SHA-256 rank of '23:row_position', then restored source order (seed label 20261021)."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C57W2S."
+      ]
+    },
+    "uci_601_predictive_maintenance.csv": {
+      "domain": "predictive maintenance",
+      "selection_status": "selected",
+      "split": "domain_generalization",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI AI4I 2020 Predictive Maintenance Dataset",
+        "source_url": "https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Selected the 5000 source row positions with the smallest SHA-256 rank of '601:row_position', then restored source order (seed label 20261021)."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5HS5C."
+      ]
+    },
+    "uci_913_soybean_cultivars.csv": {
+      "domain": "agricultural cultivars",
+      "selection_status": "selected",
+      "split": "domain_generalization",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Forty Soybean Cultivars from Subsequent Harvests",
+        "source_url": "https://archive.ics.uci.edu/dataset/913/forty+soybean+cultivars+from+subsequent+harvests",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.46420/TAES.e230005."
+      ]
+    },
+    "uci_042_glass_identification.csv": {
+      "domain": "materials forensics",
+      "selection_status": "selected",
+      "split": "domain_generalization",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Glass Identification",
+        "source_url": "https://archive.ics.uci.edu/dataset/42/glass+identification",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5WW2P."
+      ]
+    },
+    "uci_851_steel_energy.csv": {
+      "domain": "industrial energy",
+      "selection_status": "selected",
+      "split": "domain_generalization",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Steel Industry Energy Consumption",
+        "source_url": "https://archive.ics.uci.edu/dataset/851/steel+industry+energy+consumption",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Selected the 5000 source row positions with the smallest SHA-256 rank of '851:row_position', then restored source order (seed label 20261021)."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C52G8C."
+      ]
+    },
+    "uci_159_magic_gamma.csv": {
+      "domain": "gamma-ray astronomy",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI MAGIC Gamma Telescope",
+        "source_url": "https://archive.ics.uci.edu/dataset/159/magic+gamma+telescope",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Selected the 5000 source row positions with the smallest SHA-256 rank of '159:row_position', then restored source order (seed label 20261021).",
+          "Added row_id from the UCI id and original source row position because source rows were not unique."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C52C8B."
+      ]
+    },
+    "uci_222_bank_marketing.csv": {
+      "domain": "bank marketing",
+      "selection_status": "selected",
+      "split": "train",
+      "provenance": {
+        "status": "verified",
+        "source_name": "UCI Bank Marketing",
+        "source_url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+        "transformations": [
+          "Fetched from the official UCI data URL through ucimlrepo 0.0.7.",
+          "Preserved UCI column names and values in CSV form.",
+          "Selected the 5000 source row positions with the smallest SHA-256 rank of '222:row_position', then restored source order (seed label 20261021)."
+        ]
+      },
+      "license": {
+        "status": "verified",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "approved_for_research": true,
+      "notes": [
+        "Attribution must cite UCI DOI 10.24432/C5K306."
+      ]
+    }
+  }
+}

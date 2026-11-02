@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "tools": [
+    "inspect_table",
+    "run_python",
+    "submit_answer"
+  ],
+  "max_steps": 10,
+  "inspect_head_rows": 5,
+  "run_timeout_seconds": 15.0,
+  "max_output_chars": 8000,
+  "max_memory_mb": 8192,
+  "max_cpu_seconds": 120,
+  "network_disabled": true,
+  "rollout_timeout_seconds": 300.0
+}

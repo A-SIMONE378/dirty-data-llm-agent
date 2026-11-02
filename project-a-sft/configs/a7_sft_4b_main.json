@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-4B",
+  "dataset_manifest": "artifacts/a5_data/manifest.json",
+  "dataset_name": "main_14b",
+  "output_dir": "artifacts/a7_sft/qwen3_4b_main_14b_v1",
+  "seed": 20261025,
+  "max_seq_length": 4096,
+  "overflow_policy": "error",
+  "assistant_only_loss": true,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "bias": "none",
+    "target_modules": "all-linear"
+  },
+  "training": {
+    "epochs": 2,
+    "learning_rate": 0.0001,
+    "micro_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "logging_steps": 5,
+    "save_steps": 200,
+    "save_total_limit": 1,
+    "bf16": true,
+    "gradient_checkpointing": true
+  }
+}

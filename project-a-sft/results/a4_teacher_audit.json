@@ -1,0 +1,40 @@
+{
+  "a4_complete": true,
+  "blocking_gate": null,
+  "checks": {
+    "all_trajectories_validate": true,
+    "human_review_sample_matches_retained_sft": true,
+    "latest_results_cover_planned_attempts": true,
+    "manifest_matches_frozen_selection": true,
+    "no_runtime_model_errors": true,
+    "planned_attempts_match_frozen_selection": true,
+    "posix_resource_limits_active": true,
+    "private_fields_absent": true,
+    "quality_assessments_recompute": true,
+    "result_attempt_metadata_matches_manifest": true,
+    "retained_trajectory_target": true,
+    "run_is_complete": true,
+    "sandbox_limits_match_config": true,
+    "sft_covers_retained_trajectories": true,
+    "sft_private_fields_absent": true,
+    "sft_trainable_masks_and_tool_calls": true,
+    "summary_counts_match_latest_results": true,
+    "summary_manifest_hash_matches": true,
+    "trajectory_files_cover_latest_results": true
+  },
+  "checks_passed": 19,
+  "checks_total": 19,
+  "completed_attempts": 6400,
+  "human_review_status": "PASS",
+  "mechanical_target_met": true,
+  "passed": true,
+  "retained_trajectory_count": 3133,
+  "schema_version": 1,
+  "status": "PASS",
+  "terminal_status_counts": {
+    "accepted": 3834,
+    "invalid_action": 593,
+    "max_steps": 2,
+    "rejected": 1971
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "seed": 2026,
+  "ratios": {
+    "train": 0.8,
+    "dev": 0.1,
+    "test": 0.1
+  },
+  "unit": "table",
+  "notes": "A table_id is assigned exactly once; row-level splitting is forbidden."
+}

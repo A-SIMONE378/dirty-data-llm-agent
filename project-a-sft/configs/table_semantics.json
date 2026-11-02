@@ -1,0 +1,1683 @@
+{
+  "schema_version": 1,
+  "role_definitions": {
+    "identifier": "Keys, IDs, postal codes, or entity labels; never use for numeric aggregation.",
+    "category": "Nominal or coded categorical fields; eligible for grouping, not numeric aggregation.",
+    "date": "Calendar/time keys; parse or filter explicitly, not numeric aggregation.",
+    "measure": "Observed numeric quantities eligible for task-specific aggregation.",
+    "derived": "Values derived from other columns; exclude from generic task selection to avoid leakage.",
+    "coordinate": "Spatial coordinates; numeric storage does not make sums or generic means valid.",
+    "opaque": "Structured or uninterpreted payloads; no generic cleaning or aggregation."
+  },
+  "tables": {
+    "china_city_statistics.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "省份",
+          "城市",
+          "所属地域"
+        ],
+        "date": [
+          "年份"
+        ],
+        "measure": [
+          "地区生产总值(万元)",
+          "第一产业增加值(万元)",
+          "第二产业增加值(万元)",
+          "第三产业增加值(万元)",
+          "社会消费品零售总额(万元)",
+          "地方财政一般预算内收入(万元)",
+          "医院、卫生院床位数(张)"
+        ],
+        "derived": [
+          "人均地区生产总值(元)"
+        ],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [],
+      "derived_from": {
+        "人均地区生产总值(元)": [
+          "地区生产总值(万元)"
+        ]
+      }
+    },
+    "customer_master.csv": {
+      "roles": {
+        "identifier": [
+          "customer_id",
+          "customer_postal_code"
+        ],
+        "category": [
+          "gender",
+          "customer_segment",
+          "customer_city",
+          "customer_state",
+          "customer_country",
+          "region"
+        ],
+        "date": [],
+        "measure": [
+          "customer_age",
+          "customer_acquisition_cost"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "sales_transactions.csv": {
+      "roles": {
+        "identifier": [
+          "Transaction_ID",
+          "Order_ID",
+          "Customer_ID"
+        ],
+        "category": [
+          "Customer_Gender",
+          "Customer_Segment",
+          "Sales_Channel",
+          "Region",
+          "Product_Category",
+          "Order_Status",
+          "Return_Flag"
+        ],
+        "date": [
+          "Order_Date"
+        ],
+        "measure": [
+          "Customer_Age",
+          "Quantity",
+          "Unit_Price",
+          "Discount_Percentage",
+          "Cost_Amount"
+        ],
+        "derived": [
+          "Sales_Amount",
+          "Profit"
+        ],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Sales_Amount",
+        "Profit"
+      ],
+      "derived_from": {
+        "Sales_Amount": [
+          "Quantity",
+          "Unit_Price",
+          "Discount_Percentage"
+        ],
+        "Profit": [
+          "Sales_Amount",
+          "Cost_Amount"
+        ]
+      },
+      "known_limitations": [
+        "Derived fields are source values, not recomputed oracle values: 441 Sales_Amount rows and 29 Profit rows differ from the simple displayed-field formulas by more than 0.011."
+      ]
+    },
+    "student_grade_ses.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "academic_year",
+          "gender",
+          "grade_level",
+          "school_type",
+          "residence_type",
+          "family_income_bracket",
+          "has_internet_access",
+          "parental_involvement_score"
+        ],
+        "date": [
+          "survey_date"
+        ],
+        "measure": [
+          "age",
+          "family_size",
+          "annual_family_income_inr",
+          "study_hours_per_week",
+          "attendance_rate_pct",
+          "previous_year_grade_pct",
+          "final_grade_pct"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "final_grade_pct"
+      ],
+      "derived_from": {}
+    },
+    "student_sleep_screen_time.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "gender",
+          "year_of_study",
+          "major_category",
+          "residence_type",
+          "chronotype",
+          "primary_device"
+        ],
+        "date": [],
+        "measure": [
+          "age",
+          "avg_sleep_hours_weekday",
+          "weekend_sleep_delta_hours",
+          "pre_sleep_screen_time_min",
+          "daily_screen_time_hours",
+          "caffeine_drinks_per_day",
+          "sleep_quality_score",
+          "exercise_days_per_week",
+          "weekly_study_hours",
+          "cgpa"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "sleep_quality_score",
+        "cgpa"
+      ],
+      "derived_from": {}
+    },
+    "tianchi_baby_trade_history.csv": {
+      "roles": {
+        "identifier": [
+          "user_id",
+          "auction_id"
+        ],
+        "category": [
+          "cat_id",
+          "cat1"
+        ],
+        "date": [
+          "day"
+        ],
+        "measure": [
+          "buy_mount"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": [
+          "property"
+        ]
+      },
+      "targets": [
+        "buy_mount"
+      ],
+      "derived_from": {}
+    },
+    "uci_adult.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "workclass",
+          "education",
+          "marital_status",
+          "occupation",
+          "relationship",
+          "race",
+          "sex",
+          "native_country",
+          "income"
+        ],
+        "date": [],
+        "measure": [
+          "age",
+          "fnlwgt",
+          "capital_gain",
+          "capital_loss",
+          "hours_per_week"
+        ],
+        "derived": [
+          "education_num"
+        ],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "income"
+      ],
+      "derived_from": {
+        "education_num": [
+          "education"
+        ]
+      }
+    },
+    "uci_bike_sharing.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "season",
+          "year_code",
+          "month",
+          "hour",
+          "holiday",
+          "weekday",
+          "workingday",
+          "weather_code"
+        ],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "temperature_normalized",
+          "humidity_normalized",
+          "windspeed_normalized",
+          "casual",
+          "registered"
+        ],
+        "derived": [
+          "total_rentals"
+        ],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "total_rentals"
+      ],
+      "derived_from": {
+        "total_rentals": [
+          "casual",
+          "registered"
+        ]
+      }
+    },
+    "uci_seoul_bike.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "hour",
+          "season",
+          "holiday",
+          "functioning_day"
+        ],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "rented_bike_count",
+          "temperature_c",
+          "humidity_pct",
+          "wind_speed_m_s",
+          "visibility_10m",
+          "dew_point_c",
+          "solar_radiation_mj_m2",
+          "rainfall_mm",
+          "snowfall_cm"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "rented_bike_count"
+      ],
+      "derived_from": {}
+    },
+    "uci_wine_quality.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "wine_color"
+        ],
+        "date": [],
+        "measure": [
+          "fixed_acidity",
+          "volatile_acidity",
+          "citric_acid",
+          "residual_sugar",
+          "chlorides",
+          "free_sulfur_dioxide",
+          "total_sulfur_dioxide",
+          "density",
+          "ph",
+          "sulphates",
+          "alcohol",
+          "quality"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "quality"
+      ],
+      "derived_from": {}
+    },
+    "zomato_restaurants.csv": {
+      "roles": {
+        "identifier": [
+          "Restaurant ID",
+          "Restaurant Name"
+        ],
+        "category": [
+          "Country Code",
+          "City",
+          "Locality",
+          "Cuisines",
+          "Currency",
+          "Has Table booking",
+          "Has Online delivery",
+          "Price range"
+        ],
+        "date": [],
+        "measure": [
+          "Average Cost for two",
+          "Aggregate rating",
+          "Votes"
+        ],
+        "derived": [],
+        "coordinate": [
+          "Longitude",
+          "Latitude"
+        ],
+        "opaque": []
+      },
+      "targets": [
+        "Aggregate rating"
+      ],
+      "derived_from": {},
+      "known_limitations": [
+        "The supplied CSV already contains 145 Unicode replacement characters across text fields; original characters cannot be recovered from this file."
+      ]
+    },
+    "uci_001_abalone.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Sex"
+        ],
+        "date": [],
+        "measure": [
+          "Length",
+          "Diameter",
+          "Height",
+          "Whole_weight",
+          "Shucked_weight",
+          "Viscera_weight",
+          "Shell_weight",
+          "Rings"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Rings"
+      ],
+      "derived_from": {}
+    },
+    "uci_039_ecoli.csv": {
+      "roles": {
+        "identifier": [
+          "Sequence"
+        ],
+        "category": [
+          "lip",
+          "chg",
+          "class"
+        ],
+        "date": [],
+        "measure": [
+          "mcg",
+          "gvh",
+          "aac",
+          "alm1",
+          "alm2"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "class"
+      ],
+      "derived_from": {}
+    },
+    "uci_110_yeast.csv": {
+      "roles": {
+        "identifier": [
+          "row_id",
+          "Sequence_Name"
+        ],
+        "category": [
+          "localization_site"
+        ],
+        "date": [],
+        "measure": [
+          "mcg",
+          "gvh",
+          "alm",
+          "mit",
+          "erl",
+          "pox",
+          "vac",
+          "nuc"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "localization_site"
+      ],
+      "derived_from": {}
+    },
+    "uci_545_rice.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Class"
+        ],
+        "date": [],
+        "measure": [
+          "Area",
+          "Perimeter",
+          "Major_Axis_Length",
+          "Minor_Axis_Length",
+          "Eccentricity",
+          "Convex_Area",
+          "Extent"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Class"
+      ],
+      "derived_from": {}
+    },
+    "uci_850_raisin.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Class"
+        ],
+        "date": [],
+        "measure": [
+          "Area",
+          "MajorAxisLength",
+          "MinorAxisLength",
+          "Eccentricity",
+          "ConvexArea",
+          "Extent",
+          "Perimeter"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Class"
+      ],
+      "derived_from": {}
+    },
+    "uci_027_credit_approval.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "A1",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A9",
+          "A10",
+          "A12",
+          "A13",
+          "A16"
+        ],
+        "date": [],
+        "measure": [
+          "A2",
+          "A3",
+          "A8",
+          "A11",
+          "A14",
+          "A15"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "A16"
+      ],
+      "derived_from": {}
+    },
+    "uci_143_australian_credit.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "A1",
+          "A4",
+          "A5",
+          "A6",
+          "A8",
+          "A9",
+          "A11",
+          "A12",
+          "A15"
+        ],
+        "date": [],
+        "measure": [
+          "A2",
+          "A3",
+          "A7",
+          "A10",
+          "A13",
+          "A14"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "A15"
+      ],
+      "derived_from": {}
+    },
+    "uci_247_istanbul_stock_exchange.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "ISE",
+          "ISE.1",
+          "SP",
+          "DAX",
+          "FTSE",
+          "NIKKEI",
+          "BOVESPA",
+          "EU",
+          "EM"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "uci_292_wholesale_customers.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Channel",
+          "Region"
+        ],
+        "date": [],
+        "measure": [
+          "Fresh",
+          "Milk",
+          "Grocery",
+          "Frozen",
+          "Detergents_Paper",
+          "Delicassen"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Region"
+      ],
+      "derived_from": {}
+    },
+    "uci_312_dow_jones_index.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "stock",
+          "quarter"
+        ],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "percent_change_price",
+          "percent_change_volume_over_last_wk",
+          "previous_weeks_volume",
+          "next_weeks_open",
+          "next_weeks_close",
+          "percent_change_next_weeks_price",
+          "days_to_next_dividend",
+          "percent_return_next_dividend"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "percent_change_next_weeks_price"
+      ],
+      "derived_from": {}
+    },
+    "uci_368_facebook_metrics.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Type"
+        ],
+        "date": [],
+        "measure": [
+          "Page total likes",
+          "Category",
+          "Post Month",
+          "Post Weekday",
+          "Post Hour",
+          "Paid",
+          "Lifetime Post Total Reach",
+          "Lifetime Post Total Impressions",
+          "Lifetime Engaged Users",
+          "Lifetime Post Consumers",
+          "Lifetime Post Consumptions",
+          "Lifetime Post Impressions by people who have liked your Page",
+          "Lifetime Post reach by people who like your Page",
+          "Lifetime People who have liked your Page and engaged with your post",
+          "comment",
+          "like",
+          "share",
+          "Total Interactions"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Total Interactions"
+      ],
+      "derived_from": {}
+    },
+    "uci_390_stock_portfolio.csv": {
+      "roles": {
+        "identifier": [
+          "ID"
+        ],
+        "category": [
+          "period",
+          "Large B/P",
+          "Large ROE",
+          "Large S/P",
+          "Large Return Rate in the last quarter",
+          "Large Market Value",
+          "Small systematic Risk"
+        ],
+        "date": [],
+        "measure": [
+          "Annual Return",
+          "Excess Return",
+          "Systematic Risk",
+          "Total Risk",
+          "Abs. Win Rate",
+          "Rel. Win Rate",
+          "Annual Return.1",
+          "Excess Return.1",
+          "Systematic Risk.1",
+          "Total Risk.1",
+          "Abs. Win Rate.1",
+          "Rel. Win Rate.1"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Annual Return.1",
+        "Excess Return.1",
+        "Systematic Risk.1",
+        "Total Risk.1",
+        "Abs. Win Rate.1",
+        "Rel. Win Rate.1"
+      ],
+      "derived_from": {}
+    },
+    "uci_563_iranian_churn.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "Complains",
+          "Status",
+          "Churn"
+        ],
+        "date": [],
+        "measure": [
+          "Call  Failure",
+          "Subscription  Length",
+          "Charge  Amount",
+          "Seconds of Use",
+          "Frequency of use",
+          "Frequency of SMS",
+          "Distinct Called Numbers",
+          "Age Group",
+          "Tariff Plan",
+          "Age",
+          "Customer Value"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Churn"
+      ],
+      "derived_from": {}
+    },
+    "uci_597_garment_productivity.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "quarter",
+          "department",
+          "day"
+        ],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "team",
+          "targeted_productivity",
+          "smv",
+          "wip",
+          "over_time",
+          "incentive",
+          "idle_time",
+          "idle_men",
+          "no_of_style_change",
+          "no_of_workers",
+          "actual_productivity"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "actual_productivity"
+      ],
+      "derived_from": {}
+    },
+    "uci_162_forest_fires.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "month",
+          "day"
+        ],
+        "date": [],
+        "measure": [
+          "X",
+          "Y",
+          "FFMC",
+          "DMC",
+          "DC",
+          "ISI",
+          "temp",
+          "RH",
+          "wind",
+          "rain",
+          "area"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "area"
+      ],
+      "derived_from": {}
+    },
+    "uci_029_computer_hardware.csv": {
+      "roles": {
+        "identifier": [
+          "ModelName"
+        ],
+        "category": [
+          "VendorName"
+        ],
+        "date": [],
+        "measure": [
+          "MYCT",
+          "MMIN",
+          "MMAX",
+          "CACH",
+          "CHMIN",
+          "CHMAX",
+          "PRP",
+          "ERP"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "uci_257_user_knowledge.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "UNS"
+        ],
+        "date": [],
+        "measure": [
+          "STG",
+          "SCG",
+          "STR",
+          "LPR",
+          "PEG"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "UNS"
+      ],
+      "derived_from": {}
+    },
+    "uci_529_early_diabetes.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "gender",
+          "polyuria",
+          "polydipsia",
+          "sudden_weight_loss",
+          "weakness",
+          "polyphagia",
+          "genital_thrush",
+          "visual_blurring",
+          "itching",
+          "irritability",
+          "delayed_healing",
+          "partial_paresis",
+          "muscle_stiffness",
+          "alopecia",
+          "obesity",
+          "class"
+        ],
+        "date": [],
+        "measure": [
+          "age"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "class"
+      ],
+      "derived_from": {}
+    },
+    "uci_536_pedestrians_traffic.csv": {
+      "roles": {
+        "identifier": [
+          "oid"
+        ],
+        "category": [],
+        "date": [],
+        "measure": [
+          "timestamp",
+          "body_roll",
+          "body_pitch",
+          "body_yaw",
+          "head_roll",
+          "head_pitch",
+          "head_yaw"
+        ],
+        "derived": [],
+        "coordinate": [
+          "x",
+          "y"
+        ],
+        "opaque": [
+          "other_oid",
+          "other_class",
+          "other_x",
+          "other_y"
+        ]
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "uci_713_auction_verification.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "verification.result"
+        ],
+        "date": [],
+        "measure": [
+          "process.b1.capacity",
+          "process.b2.capacity",
+          "process.b3.capacity",
+          "process.b4.capacity",
+          "property.price",
+          "property.product",
+          "property.winner",
+          "verification.time"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "verification.result",
+        "verification.time"
+      ],
+      "derived_from": {}
+    },
+    "uci_014_breast_cancer.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "age",
+          "menopause",
+          "tumor-size",
+          "inv-nodes",
+          "node-caps",
+          "breast",
+          "breast-quad",
+          "irradiat",
+          "Class"
+        ],
+        "date": [],
+        "measure": [
+          "deg-malig"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Class"
+      ],
+      "derived_from": {}
+    },
+    "uci_015_breast_cancer_wisconsin.csv": {
+      "roles": {
+        "identifier": [
+          "row_id",
+          "Sample_code_number"
+        ],
+        "category": [
+          "Class"
+        ],
+        "date": [],
+        "measure": [
+          "Clump_thickness",
+          "Uniformity_of_cell_size",
+          "Uniformity_of_cell_shape",
+          "Marginal_adhesion",
+          "Single_epithelial_cell_size",
+          "Bare_nuclei",
+          "Bland_chromatin",
+          "Normal_nucleoli",
+          "Mitoses"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Class"
+      ],
+      "derived_from": {}
+    },
+    "uci_030_contraceptive_method.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "wife_edu",
+          "husband_edu",
+          "wife_religion",
+          "wife_working",
+          "husband_occupation",
+          "standard_of_living_index",
+          "media_exposure",
+          "contraceptive_method"
+        ],
+        "date": [],
+        "measure": [
+          "wife_age",
+          "num_children"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "contraceptive_method"
+      ],
+      "derived_from": {}
+    },
+    "uci_045_heart_disease.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "sex",
+          "cp",
+          "fbs",
+          "restecg",
+          "exang",
+          "slope",
+          "thal"
+        ],
+        "date": [],
+        "measure": [
+          "age",
+          "trestbps",
+          "chol",
+          "thalach",
+          "oldpeak",
+          "ca",
+          "num"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "num"
+      ],
+      "derived_from": {}
+    },
+    "uci_060_liver_disorders.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "selector"
+        ],
+        "date": [],
+        "measure": [
+          "mcv",
+          "alkphos",
+          "sgpt",
+          "sgot",
+          "gammagt",
+          "drinks"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "drinks"
+      ],
+      "derived_from": {}
+    },
+    "uci_145_statlog_heart.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "sex",
+          "chest-pain",
+          "fasting-blood-sugar",
+          "electrocardiographic",
+          "angina",
+          "thal"
+        ],
+        "date": [],
+        "measure": [
+          "age",
+          "rest-bp",
+          "serum-chol",
+          "max-heart-rate",
+          "oldpeak",
+          "slope",
+          "major-vessels",
+          "heart-disease"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "heart-disease"
+      ],
+      "derived_from": {}
+    },
+    "uci_161_mammographic_mass.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "Severity"
+        ],
+        "date": [],
+        "measure": [
+          "BI-RADS",
+          "Age",
+          "Shape",
+          "Margin",
+          "Density"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Severity"
+      ],
+      "derived_from": {}
+    },
+    "uci_212_vertebral_column.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "class"
+        ],
+        "date": [],
+        "measure": [
+          "pelvic_incidence",
+          "pelvic_tilt",
+          "lumbar_lordosis_angle",
+          "sacral_slope",
+          "pelvic_radius",
+          "degree_spondylolisthesis"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "class"
+      ],
+      "derived_from": {}
+    },
+    "uci_225_indian_liver_patient.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "Gender",
+          "Selector"
+        ],
+        "date": [],
+        "measure": [
+          "Age",
+          "TB",
+          "DB",
+          "Alkphos",
+          "Sgpt",
+          "Sgot",
+          "TP",
+          "ALB",
+          "A/G Ratio"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Selector"
+      ],
+      "derived_from": {}
+    },
+    "uci_277_thoracic_surgery.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "DGN",
+          "PRE6",
+          "PRE7",
+          "PRE8",
+          "PRE9",
+          "PRE10",
+          "PRE11",
+          "PRE14",
+          "PRE17",
+          "PRE19",
+          "PRE25",
+          "PRE30",
+          "PRE32",
+          "Risk1Yr"
+        ],
+        "date": [],
+        "measure": [
+          "PRE4",
+          "PRE5",
+          "AGE"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Risk1Yr"
+      ],
+      "derived_from": {}
+    },
+    "uci_461_drug_reviews.csv": {
+      "roles": {
+        "identifier": [
+          "reviewID"
+        ],
+        "category": [
+          "urlDrugName",
+          "effectiveness",
+          "sideEffects",
+          "condition"
+        ],
+        "date": [],
+        "measure": [
+          "rating"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": [
+          "benefitsReview",
+          "sideEffectsReview",
+          "commentsReview"
+        ]
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "uci_519_heart_failure.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "anaemia",
+          "diabetes",
+          "high_blood_pressure",
+          "sex",
+          "smoking",
+          "death_event"
+        ],
+        "date": [],
+        "measure": [
+          "age",
+          "creatinine_phosphokinase",
+          "ejection_fraction",
+          "platelets",
+          "serum_creatinine",
+          "serum_sodium",
+          "time"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "death_event"
+      ],
+      "derived_from": {}
+    },
+    "uci_544_obesity.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "Gender",
+          "family_history_with_overweight",
+          "FAVC",
+          "CAEC",
+          "SMOKE",
+          "SCC",
+          "CALC",
+          "MTRANS",
+          "NObeyesdad"
+        ],
+        "date": [],
+        "measure": [
+          "Age",
+          "Height",
+          "Weight",
+          "FCVC",
+          "NCP",
+          "CH2O",
+          "FAF",
+          "TUE"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "NObeyesdad"
+      ],
+      "derived_from": {}
+    },
+    "uci_571_hcv.csv": {
+      "roles": {
+        "identifier": [
+          "ID"
+        ],
+        "category": [
+          "Sex",
+          "Category"
+        ],
+        "date": [],
+        "measure": [
+          "Age",
+          "ALB",
+          "ALP",
+          "ALT",
+          "AST",
+          "BIL",
+          "CHE",
+          "CHOL",
+          "CREA",
+          "CGT",
+          "PROT"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Category"
+      ],
+      "derived_from": {}
+    },
+    "uci_863_maternal_health.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "RiskLevel"
+        ],
+        "date": [],
+        "measure": [
+          "Age",
+          "SystolicBP",
+          "DiastolicBP",
+          "BS",
+          "BodyTemp",
+          "HeartRate"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "RiskLevel"
+      ],
+      "derived_from": {}
+    },
+    "uci_878_cirrhosis.csv": {
+      "roles": {
+        "identifier": [
+          "ID"
+        ],
+        "category": [
+          "Status",
+          "Drug",
+          "Sex",
+          "Ascites",
+          "Hepatomegaly",
+          "Spiders",
+          "Edema",
+          "Stage"
+        ],
+        "date": [],
+        "measure": [
+          "N_Days",
+          "Age",
+          "Bilirubin",
+          "Cholesterol",
+          "Albumin",
+          "Copper",
+          "Alk_Phos",
+          "SGOT",
+          "Tryglicerides",
+          "Platelets",
+          "Prothrombin"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Status"
+      ],
+      "derived_from": {}
+    },
+    "uci_023_chess_krk.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "white-king-file",
+          "white-rook-file",
+          "black-king-file",
+          "white-depth-of-win"
+        ],
+        "date": [],
+        "measure": [
+          "white-king-rank",
+          "white-rook-rank",
+          "black-king-rank"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "white-depth-of-win"
+      ],
+      "derived_from": {}
+    },
+    "uci_601_predictive_maintenance.csv": {
+      "roles": {
+        "identifier": [
+          "UID",
+          "Product ID"
+        ],
+        "category": [
+          "Type"
+        ],
+        "date": [],
+        "measure": [
+          "Air temperature",
+          "Process temperature",
+          "Rotational speed",
+          "Torque",
+          "Tool wear",
+          "Machine failure",
+          "TWF",
+          "HDF",
+          "PWF",
+          "OSF",
+          "RNF"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Machine failure",
+        "TWF",
+        "HDF",
+        "PWF",
+        "OSF",
+        "RNF"
+      ],
+      "derived_from": {}
+    },
+    "uci_913_soybean_cultivars.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "Cultivar"
+        ],
+        "date": [],
+        "measure": [
+          "Season",
+          "Repetition",
+          "PH",
+          "IFP",
+          "NLP",
+          "NGP",
+          "NGL",
+          "NS",
+          "MHG",
+          "GY"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [],
+      "derived_from": {}
+    },
+    "uci_042_glass_identification.csv": {
+      "roles": {
+        "identifier": [
+          "Id_number"
+        ],
+        "category": [
+          "Type_of_glass"
+        ],
+        "date": [],
+        "measure": [
+          "RI",
+          "Na",
+          "Mg",
+          "Al",
+          "Si",
+          "K",
+          "Ca",
+          "Ba",
+          "Fe"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Type_of_glass"
+      ],
+      "derived_from": {}
+    },
+    "uci_851_steel_energy.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "WeekStatus",
+          "Day_of_week",
+          "Load_Type"
+        ],
+        "date": [
+          "date"
+        ],
+        "measure": [
+          "Usage_kWh",
+          "Lagging_Current_Reactive.Power_kVarh",
+          "Leading_Current_Reactive_Power_kVarh",
+          "CO2(tCO2)",
+          "Lagging_Current_Power_Factor",
+          "Leading_Current_Power_Factor",
+          "NSM"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "Load_Type"
+      ],
+      "derived_from": {}
+    },
+    "uci_159_magic_gamma.csv": {
+      "roles": {
+        "identifier": [
+          "row_id"
+        ],
+        "category": [
+          "class"
+        ],
+        "date": [],
+        "measure": [
+          "fLength",
+          "fWidth",
+          "fSize",
+          "fConc",
+          "fConc1",
+          "fAsym",
+          "fM3Long",
+          "fM3Trans",
+          "fAlpha",
+          "fDist"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "class"
+      ],
+      "derived_from": {}
+    },
+    "uci_222_bank_marketing.csv": {
+      "roles": {
+        "identifier": [],
+        "category": [
+          "job",
+          "marital",
+          "education",
+          "default",
+          "housing",
+          "loan",
+          "contact",
+          "poutcome",
+          "y"
+        ],
+        "date": [
+          "day_of_week",
+          "month"
+        ],
+        "measure": [
+          "age",
+          "balance",
+          "duration",
+          "campaign",
+          "pdays",
+          "previous"
+        ],
+        "derived": [],
+        "coordinate": [],
+        "opaque": []
+      },
+      "targets": [
+        "y"
+      ],
+      "derived_from": {}
+    }
+  }
+}

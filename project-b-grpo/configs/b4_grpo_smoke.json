@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-1.7B",
+  "adapter_path": "artifacts/a5_sft/qwen3_1_7b_main_14b_v1/final_adapter",
+  "task_limit": 2,
+  "output_dir": "artifacts/b4_grpo/qwen3_1_7b_smoke",
+  "max_steps": 2,
+  "num_generations": 2,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 2,
+  "max_completion_length": 256,
+  "max_tool_calling_iterations": 10,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "learning_rate": 0.000001,
+  "beta": 0.0,
+  "seed": 20261027,
+  "bf16": true,
+  "gradient_checkpointing": true,
+  "logging_steps": 1,
+  "save_steps": 2,
+  "save_total_limit": 1
+}

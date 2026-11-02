@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "task_index": "artifacts/b3_tasks/index.json",
+  "source_tasks": "data/tasks/a2_tasks.jsonl",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "adapter_path": "artifacts/a5_sft/qwen3_1_7b_main_14b_v1/final_adapter",
+  "samples_per_task": 8,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "max_new_tokens": 256,
+  "max_context_tokens": 28672,
+  "max_steps": 10,
+  "selection_seed": "project-a-b3-rollout-v1"
+}

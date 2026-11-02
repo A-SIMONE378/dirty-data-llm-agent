@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "sample_seed": 20261021,
+  "max_rows": 5000,
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "datasets": [
+    {"uci_id": 1, "file": "uci_001_abalone.csv", "domain": "marine biology", "split": "train"},
+    {"uci_id": 39, "file": "uci_039_ecoli.csv", "domain": "molecular biology", "split": "train"},
+    {"uci_id": 110, "file": "uci_110_yeast.csv", "domain": "molecular biology", "split": "train"},
+    {"uci_id": 545, "file": "uci_545_rice.csv", "domain": "crop morphology", "split": "train"},
+    {"uci_id": 850, "file": "uci_850_raisin.csv", "domain": "food morphology", "split": "train"},
+    {"uci_id": 27, "file": "uci_027_credit_approval.csv", "domain": "credit risk", "split": "train"},
+    {"uci_id": 143, "file": "uci_143_australian_credit.csv", "domain": "credit risk", "split": "train"},
+    {"uci_id": 159, "file": "uci_159_magic_gamma.csv", "domain": "gamma-ray astronomy", "split": "train"},
+    {"uci_id": 292, "file": "uci_292_wholesale_customers.csv", "domain": "wholesale retail", "split": "train"},
+    {"uci_id": 312, "file": "uci_312_dow_jones_index.csv", "domain": "financial markets", "split": "train"},
+    {"uci_id": 368, "file": "uci_368_facebook_metrics.csv", "domain": "social media marketing", "split": "train"},
+    {"uci_id": 390, "file": "uci_390_stock_portfolio.csv", "domain": "portfolio performance", "split": "train"},
+    {"uci_id": 563, "file": "uci_563_iranian_churn.csv", "domain": "telecommunications", "split": "train"},
+    {"uci_id": 597, "file": "uci_597_garment_productivity.csv", "domain": "manufacturing productivity", "split": "train"},
+    {"uci_id": 162, "file": "uci_162_forest_fires.csv", "domain": "wildfire environment", "split": "train"},
+    {"uci_id": 29, "file": "uci_029_computer_hardware.csv", "domain": "computer hardware", "split": "train"},
+    {"uci_id": 257, "file": "uci_257_user_knowledge.csv", "domain": "education", "split": "train"},
+    {"uci_id": 529, "file": "uci_529_early_diabetes.csv", "domain": "diabetes screening", "split": "train"},
+    {"uci_id": 222, "file": "uci_222_bank_marketing.csv", "domain": "bank marketing", "split": "train"},
+    {"uci_id": 713, "file": "uci_713_auction_verification.csv", "domain": "auction systems", "split": "train"},
+    {"uci_id": 14, "file": "uci_014_breast_cancer.csv", "domain": "oncology", "split": "train"},
+    {"uci_id": 15, "file": "uci_015_breast_cancer_wisconsin.csv", "domain": "oncology", "split": "train"},
+    {"uci_id": 30, "file": "uci_030_contraceptive_method.csv", "domain": "reproductive health", "split": "train"},
+    {"uci_id": 45, "file": "uci_045_heart_disease.csv", "domain": "cardiology", "split": "train"},
+    {"uci_id": 60, "file": "uci_060_liver_disorders.csv", "domain": "hepatology", "split": "train"},
+    {"uci_id": 145, "file": "uci_145_statlog_heart.csv", "domain": "cardiology", "split": "dev"},
+    {"uci_id": 161, "file": "uci_161_mammographic_mass.csv", "domain": "diagnostic imaging", "split": "dev"},
+    {"uci_id": 212, "file": "uci_212_vertebral_column.csv", "domain": "orthopedics", "split": "dev"},
+    {"uci_id": 225, "file": "uci_225_indian_liver_patient.csv", "domain": "hepatology", "split": "dev"},
+    {"uci_id": 277, "file": "uci_277_thoracic_surgery.csv", "domain": "thoracic surgery", "split": "test"},
+    {"uci_id": 461, "file": "uci_461_drug_reviews.csv", "domain": "patient drug reviews", "split": "test"},
+    {"uci_id": 519, "file": "uci_519_heart_failure.csv", "domain": "cardiology", "split": "test"},
+    {"uci_id": 544, "file": "uci_544_obesity.csv", "domain": "nutrition and obesity", "split": "test"},
+    {"uci_id": 571, "file": "uci_571_hcv.csv", "domain": "hepatology", "split": "test"},
+    {"uci_id": 863, "file": "uci_863_maternal_health.csv", "domain": "maternal health", "split": "test"},
+    {"uci_id": 878, "file": "uci_878_cirrhosis.csv", "domain": "hepatology", "split": "test"},
+    {"uci_id": 23, "file": "uci_023_chess_krk.csv", "domain": "game strategy", "split": "domain_generalization"},
+    {"uci_id": 601, "file": "uci_601_predictive_maintenance.csv", "domain": "predictive maintenance", "split": "domain_generalization"},
+    {"uci_id": 913, "file": "uci_913_soybean_cultivars.csv", "domain": "agricultural cultivars", "split": "domain_generalization"},
+    {"uci_id": 42, "file": "uci_042_glass_identification.csv", "domain": "materials forensics", "split": "domain_generalization"},
+    {"uci_id": 851, "file": "uci_851_steel_energy.csv", "domain": "industrial energy", "split": "domain_generalization"}
+  ],
+  "retained_quarantine": [
+    {
+      "uci_id": 247,
+      "file": "uci_247_istanbul_stock_exchange.csv",
+      "reason": "A2 semantic audit found no true categorical field; the continuous SP return was incorrectly labeled categorical by source metadata."
+    },
+    {
+      "uci_id": 536,
+      "file": "uci_536_pedestrians_traffic.csv",
+      "reason": "A2 semantic audit found no scalar categorical field; body/head angles and list-valued other-object fields were incorrectly typed by source metadata."
+    }
+  ]
+}
